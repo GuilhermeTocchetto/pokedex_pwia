@@ -47,13 +47,8 @@
                     tipo.textContent = "Tipo: " + dados.types[0].type.name
                     num.textContent = "#" + dados.order
 
-                })
-
-                    console.log("foi porra")
-                } 
-
-                function Próximo() {
-            var val = Number(input.value);
+                    function Próximo() {
+            var val = Number(dados.order);
             if (!isNaN(val)) {  //é uma função do JavaScript que verifica se o valor passado não é um número (NaN = Not a Number).
                 val++
                 input.value = val
@@ -62,13 +57,19 @@
         }
 
         function Anterior() {
-            var val = Number(input.value)
+            var val = Number(dados.order) //coloca a api
             if (!isNaN(val) && val > 1) {
                 val--
                 input.value = val
                 buscarPokemon(val)
             }
         }
+                })
+
+                    console.log("foi porra")
+                } 
+
+
             </script>
 </body>
 </html>
