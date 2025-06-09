@@ -18,13 +18,20 @@
         <p id="tipo"></p><br>
         <img src="" id="img" alt="">
         </div>
-        <button id="Anterior" type="button" onclick="Anterior()" >Anterior</button>
-        <button id="Próximo" type="button" onclick="Próximo()" >Próximo</button>
+        <button id="Anterior" type="button" onclick="Anterior()">Anterior</button>
+        <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
     </div>
             <script>
 
+                var pokemonAtual = 1;
                  
-                function Clicar()
+
+                        function Clicar() {
+                    const input = document.getElementById("pokemon");
+                    const numero = isNaN(input.value) ? input.value.toLowerCase() : Number(input.value);
+                    buscarPokemon(numero);
+                }
+                function buscarPokemon(valor)
                 {
                     var input = document.getElementById("pokemon")
                     var nome = document.getElementById("nome")
@@ -34,41 +41,38 @@
                     
 
 
-                        var url = "https://pokeapi.co/api/v2/pokemon/" + input.value  
+                        var url = "https://pokeapi.co/api/v2/pokemon/" + valor  
                         
                         fetch(url)
                         .then(response => response.json())
                 .then((dados) => {
             
                     nome.textContent = dados.name               // a variavel com o value funciona so com input, pois ele nao esta dentro de uma div que funciona com container
-                        img.src = dados.sprites.other.showdown.front_default
-                        img.style.width = "200px"
-                        img.style.height = "auto"
+                    img.src = dados.sprites.other.showdown.front_default
                     tipo.textContent = "Tipo: " + dados.types[0].type.name
-                    num.textContent = "#" + dados.order
-
-                    function Próximo() {
-            var val = Number(dados.order);
-            if (!isNaN(val)) {  //é uma função do JavaScript que verifica se o valor passado não é um número (NaN = Not a Number).
-                val++
-                input.value = val
-                buscarPokemon(val)
+                    num.textContent = "#" + dados.id
+                    input.value = dados.id
+                    pokemonAtual = dados.id
+                })
+                .catch(error => {
+                    nome.textContent = "Pokémon não encontrado";
+                    img.src = "";
+                    tipo.textContent = "";
+                    num.textContent = "";
+                });
             }
+                    function Proximo() {
+            pokemonAtual++;
+            buscarPokemon(pokemonAtual);
         }
 
         function Anterior() {
-            var val = Number(dados.order) //coloca a api
-            if (!isNaN(val) && val > 1) {
-                val--
-                input.value = val
-                buscarPokemon(val)
+            if (pokemonAtual > 1) {
+                pokemonAtual--;
+                buscarPokemon(pokemonAtual);
             }
-        }
-                })
 
-                    console.log("foi porra")
-                } 
-
+        } 
 
             </script>
 </body>
