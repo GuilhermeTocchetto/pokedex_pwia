@@ -3,39 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
     <title>Pokedéx</title>
     <link rel="stylesheet" href="pk.css">
+
 </head>
 <body>
-    <div>
-        
-            <input  type="text" id="pokemon" name="numero" class="input">
-                <button id="butao" type="button" onclick="Clicar()" class="button">
-                pesquisar na pokedex
-                </button><br>
-        <div>
-        <p id="num"></p><p id="nome"></p><br> <!--<input type="text" id="tipo"><br>-->
-        <p id="tipo"></p><br>
-        <img src="" id="img" alt="">
-        </div>
-        <div>
-            <button id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
-            <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
-        </div>
-    </div>
+    
+    <main>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/132.gif" alt="pokemon" class="img_pk">
+
+        <img src="pokebola.png" alt="pokebola" class="pokebola">
+         
+    </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
+    </style>
             <script>
 
                 var pokemonAtual = 1;
@@ -52,6 +35,7 @@
                     var nome = document.getElementById("nome")
                     var img = document.getElementById("img")
                     var tipo = document.getElementById("tipo")
+                    var tipo2 = document.getElementById("tipo2")
                     var num = document.getElementById("num")
                     
 
@@ -65,6 +49,7 @@
                     nome.textContent = dados.name               // a variavel com o value funciona so com input, pois ele nao esta dentro de uma div que funciona com container
                     img.src = dados.sprites.other.showdown.front_default
                     tipo.textContent = "Tipo: " + dados.types[0].type.name
+                    tipo2.textContent = dados.types[1] ? dados.types[1].type.name:
                     num.textContent = "#" + dados.id
                     input.value = dados.id
                     pokemonAtual = dados.id
