@@ -18,9 +18,24 @@
         <p id="tipo"></p><br>
         <img src="" id="img" alt="">
         </div>
-        <button id="Anterior" type="button" onclick="Anterior()">Anterior</button>
-        <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
+        <div>
+            <button id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
+            <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
             <script>
 
                 var pokemonAtual = 1;
@@ -31,7 +46,7 @@
                     const numero = isNaN(input.value) ? input.value.toLowerCase() : Number(input.value);
                     buscarPokemon(numero);
                 }
-                function buscarPokemon(valor)
+                function buscarPokemon(valor) //
                 {
                     var input = document.getElementById("pokemon")
                     var nome = document.getElementById("nome")
@@ -41,7 +56,7 @@
                     
 
 
-                        var url = "https://pokeapi.co/api/v2/pokemon/" + valor  
+                        var url = "https://pokeapi.co/api/v2/pokemon/" + valor 
                         
                         fetch(url)
                         .then(response => response.json())
