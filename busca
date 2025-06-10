@@ -10,9 +10,6 @@
                             <input  type="text" id="pokemon" name="numero" class="input">
                         </div>
                         <div>
-                            <p id="num"></p><p id="nome"></p><br>
-                        </div>
-                        <div>
                             <p id="tipo"></p>
                             <p id="tipo2"></p>
                         </div>
@@ -24,3 +21,31 @@
                 </div>
 
             </div>
+
+
+
+
+            .botao-redondo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+                transition: all 0.2s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              .botao-redondo:hover {
+                background-color: #367C39;
+                box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+              }
+              .botao-redondo:active {
+                background-color: #2A4F2E;
+                box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+                transform: translateY(2px);
+              

@@ -6,14 +6,37 @@
 
 body{
     text-align: center;
-    background: linear-gradient(to button, #d35e5e, #fff);
+    background: linear-gradient(to button, #e26767, #fff);
     min-width: 100%;
 }
 main{
     display:inline-block;
     margin-top: 4%;
+    padding: 15px;
+    position: relative;
+
 }
 .pokebola{
     width: 70%;
     height: auto;
+    border-radius: 50%;
+}
+.img_pk{
+    position: absolute;
+    left: 44%;
+    bottom: 71%;
+    transform: translate(16%, 0%);
+    height: 14%;
+}
+.nome_pk{
+    position: absolute;
+    bottom: 48%;
+    transform: translate(424%, 0%);
+    color: #ffffff;
+}
+.id_pk{
+    position: absolute;
+    bottom: 47%;
+    transform: translate(-1350%, 0%);
+    color: #ffffff;
 }
