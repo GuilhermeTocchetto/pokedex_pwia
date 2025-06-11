@@ -32,13 +32,13 @@ main{
     position: absolute;
     bottom: 48%;
     transform: translate(424%, 0%);
-    color: #ffffff;
+    color: rgb(0, 255, 0);
 }
 .id_pk{
     position: absolute;
     bottom: 47%;
     transform: translate(-1350%, 0%);
-    color: #ffffff;
+    color: rgb(38, 0, 255);
 }
 .button{
     width: 10%;
@@ -49,7 +49,7 @@ main{
     border: none;
     cursor: pointer;
     font-size: 16px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
     display: flex;
     justify-content: center;
@@ -64,5 +64,21 @@ main{
 }
 .button:active {
     background-color: #afafaf;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 5px rgb(0, 0, 0);
+}
+.pesquisa_pk{
+    position: absolute;
+    bottom: 30%;
+    width: 97%;
+}
+.input{
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline-color: transparent;
 }
