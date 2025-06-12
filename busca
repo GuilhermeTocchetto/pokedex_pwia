@@ -1,26 +1,29 @@
-<div>        
-                <div>
-                    <img src="" id="img" alt="">
-                    <div>
-                        <button id="butao" type="button" onclick="Clicar()" class="button">
-                        pesquisar
-                        </button>
-                    </div>
-                        <div>
-                            <input  type="text" id="pokemon" name="numero" class="input">
+<div class="card-1">        
+                        <div class="busca_pk">
+                            <input  type="text" id="pokemon" name="numero" class="input_dec">
+                            <button id="butao" type="button" onclick="Clicar()" class="button">
+                                buscar
+                            </button>
                         </div>
-                        <div>
+</div>
+<div class="card-2">
+
+                        <div class="tipo1">
                             <p id="tipo"></p>
+                        </div>
+
+                        <div class="tipo2">
                             <p id="tipo2"></p>
                         </div>
-                    </div>
 
-                <div>
-                    <button id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
-                    <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
-                </div>
+</div class="card-botoes">
 
-            </div>
+        <div class="botao">
+            <button id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
+            <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
+        </div>
+        
+</div>
 
 
 
