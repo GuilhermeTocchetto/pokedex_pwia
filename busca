@@ -8,13 +8,18 @@
 </div>
 <div class="card-2">
 
-                        <div class="tipo1">
-                            <p id="tipo"></p>
-                        </div>
+                    <div class="tipo1">
+                        <p id="tipo"></p>
+                    </div>
 
-                        <div class="tipo2">
-                            <p id="tipo2"></p>
-                        </div>
+                    <div class="tipo2">
+                        <p id="tipo2"></p>
+                    </div>
+                    
+                    <div class="img">
+                        <img src="" id="img" alt="">
+                    </div>
+
 
 </div class="card-botoes">
 
