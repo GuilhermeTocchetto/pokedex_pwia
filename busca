@@ -20,9 +20,9 @@
                         <img src="" id="img" alt="">
                     </div>
 
-
-</div class="card-botoes">
-
+</div>
+<div class="card-botoes">
+<div>
         <div class="botao">
             <button id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
             <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
