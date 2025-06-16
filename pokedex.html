@@ -5,51 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="">
     <title>Pokedéx</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pk.css">
 
 </head>
 <body>
     
-    <main>
-
-        <div class="card-1">        
-            <div class="busca_pk">
-                <input  type="text" id="pokemon" name="numero" class="input_dec">
-                <button id="butao" type="button" onclick="Clicar()" class="button">
-                    buscar
-                </button>
+            <div class="pos_input">
+            <input type="text"
+                    id="pokemon"
+                    name="numero"
+                    class="input_dec"
+                    placeholder="Digite o nome ou número do Pokémon">
             </div>
-</div>
-<div class="card-2">
-        <div class="caixa_nome">
-            <h1 id="nome"></h1>
-        </div>
+        <div class="pos_botao">        
+            <button id="butao" type="button" onclick="Clicar()" class="button">
+                buscar
+            </button>
+        </div> <!--posicao certa-->
+
+        <div class="card-caract">
+
+            <div class="caixa_nome">
+                <h1 id="nome"></h1>
+            </div>
+
+            <div id="num"></div> <!-- Adicionado para exibir o ID do Pokémon -->
+           
             <div class="tipo1">
                 <p id="tipo"></p>
             </div>
             <div class="tipo2">
                 <p id="tipo2"></p>
-            </div>            
-            <div class="img">
-                <img src="" id="img" alt="">
+            </div>  
+
+        </div>
+
+            <div class="pos_img">
+                <img src="" id="img" alt="" class="img">
             </div>
 
+<div class="card-botoes">
+
+    <button class="AnteriorEdepois" id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
+    <button class="AnteriorEdepois" id="Proximo" type="button" onclick="Proximo()">Próximo</button>
+
+</div>
+
+<div class="pos_shiny">
+        <img src="" id="botao_shiny" class="img_shiny" alt="">
+</div>
+<div class="pos_botao-shiny">
+            <button class="botao_shiny" id="shiny" type="button" onclick="buscarShiny()">Ver Shiny</button>
 </div>
 
 
-</div class="card-botoes">
-
-<div class="botao">
-    <button id="Anterior" type="button" onclick="Anterior()">Anterior</button> 
-    <button id="Proximo" type="button" onclick="Proximo()">Próximo</button>
-</div>
-
-</div>
-        
-    </main>
-
-
-    </style>
             <script>
                 const tiposPT = {
                     normal: "normal",
@@ -75,11 +85,12 @@
                  
 
                         function Clicar() {
-                    const input = document.getElementById("pokemon");
-                    const numero = isNaN(input.value) ? input.value.toLowerCase() : Number(input.value);
-                    buscarPokemon(numero);
+                    var input = document.getElementById("pokemon")
+                    var numero = isNaN(input.value) ? input.value.toLowerCase() : Number(input.value)
+                    buscarPokemon(numero)
+                     
                 }
-                function buscarPokemon(valor) //
+                function buscarPokemon(valor) 
                 {
                     var input = document.getElementById("pokemon")
                     var nome = document.getElementById("nome")
@@ -87,7 +98,7 @@
                     var tipo = document.getElementById("tipo")
                     var tipo2 = document.getElementById("tipo2")
                     var num = document.getElementById("num")
-                    
+                    var shiny = document.getElementById("shiny")
 
 
                         var url = "https://pokeapi.co/api/v2/pokemon/" + valor 
@@ -98,13 +109,18 @@
             
                     nome.textContent = dados.name               // a variavel com o value funciona so com input, pois ele nao esta dentro de uma div que funciona com container
                     img.src = dados.sprites.other.showdown.front_default
-                    tipo.textContent = "Tipo: " + dados.types[0].type.name
-                    tipo2.textContent = dados.types[1] ? dados.types[1].type.name:
-                    num.textContent = dados.id
+                    tipo.textContent = "Tipo: " +tiposPT[dados.types[0].type.name]
+                    tipo2.textContent = dados.types[1] ? "tipo2: " + tiposPT[dados.types[1].type.name] : ''
+                    num.textContent ="ID: " + dados.id
                     input.value = dados.id
                     pokemonAtual = dados.id
+                    shiny = dados.sprites.other.showdown.front_shiny
+
                 })
+
+                
             }
+            
                     function Proximo() {
             pokemonAtual++
             buscarPokemon(pokemonAtual)
@@ -112,12 +128,18 @@
 
         function Anterior() {
             if (pokemonAtual > 1) {
-                pokemonAtual--;
-                buscarPokemon(pokemonAtual);
+                pokemonAtual--
+                buscarPokemon(pokemonAtual)
             }
 
         } 
-
+        
+        function mostrarShiny() {
+            shiny = !shiny
+            buscarPokemon(pokemonAtual)
+        }
+        
+    
             </script>
 </body>
 </html>

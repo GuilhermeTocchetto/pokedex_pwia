@@ -1,1 +1,108 @@
-
+body {
+        background-image: url('fundoPK.png');
+        background-size: cover; /* Faz a imagem cobrir toda a área */
+        background-repeat: no-repeat; 
+        background-position: center; 
+        height: 100vh; /* Define a altura como 100% da visao */
+        margin: 0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        background-color: #6eff75;
+        }
+main{
+        /*organizar os div*/
+}
+    .pos_input{
+        position: absolute;
+         transform: translate(0, -180px);
+        left: 299px;
+}    
+.input_dec{
+        background: transparent;
+        border: 1px #0000009c;
+        border-bottom: 2px solid #000; /* linha abaixo */
+        color: #000000; /* cor do texto */
+        padding: 8px 4px;
+        outline:#000;
+        font-size: 16px;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 9.2px;
+        text-align: center;
+}
+.pos_botao{
+    position: absolute;
+    left: 367px;
+     transform: translate(0, -110px)
+}
+.button{
+    width: 55px;
+    height: 54px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7.4px;
+    text-align: center;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+.card-botoes{
+    position: absolute;
+    left: 330px;
+    top: 274px;
+}
+.botao_shiny, .AnteriorEdepois{
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+.botao_shiny, .AnteriorEdepois, .button:hover {
+    background-color: #ececec;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+}
+.botao_shiny, .AnteriorEdepois, .button:active {
+    background-color: #afafaf;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0);
+}
+.pos_img{
+    position: absolute;
+    left: 340px;
+    bottom: 78px;
+}
+.img{
+    width: 150%;
+    max-width: 240px;
+    min-width: 70px;
+    height: auto;
+    min-height: auto;
+    max-height: auto;
+}
+.card-caract{
+    position: absolute;
+    right: 250px;
+    bottom: 30px;
+    width: 300px;
+    max-width: 300px;
+    height: 160px;
+    max-height: 180px;
+    background-color: #82da85da; /* Cor de fundo */
+    border: 2px solid #00fd4ca9; /* Borda */
+    padding-left: 40px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'Press Start 2P', monospace;
+}
+.pos_shiny{
+    position: absolute;
+    right: 450px;
+    top: 300px;
+}
+.img_shiny{
+    width: 175%;
+    max-width: 240px;
+    height: auto;
+}
+.pos_botao-shiny{
+    position: absolute;
+    left: 359px;
+    top: 298px;
+}
