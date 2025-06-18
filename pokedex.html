@@ -16,7 +16,7 @@
                     id="pokemon"
                     name="numero"
                     class="input_dec"
-                    placeholder="Digite o nome ou número do Pokémon">
+                    placeholder="Digite o nome ou número">
             </div>
         <div class="pos_botao">        
             <button id="butao" type="button" onclick="Clicar()" class="button">
@@ -56,7 +56,7 @@
         <img src="" id="botao_shiny" class="img_shiny" alt="">
 </div>
 <div class="pos_botao-shiny">
-            <button class="botao_shiny" id="shiny" type="button" onclick="buscarShiny()">Ver Shiny</button>
+            <button class="botao_shiny" id="shiny" type="button" onclick="ClicarShiny()">Shiny</button>
 </div>
 
 
@@ -81,9 +81,10 @@
                     steel: "aço",
                     fairy: "fada"
                 }
-                var pokemonAtual = 1;
+                var pokemonAtual = 0;
                  
 
+                
                         function Clicar() {
                     var input = document.getElementById("pokemon")
                     var numero = isNaN(input.value) ? input.value.toLowerCase() : Number(input.value)
@@ -98,7 +99,6 @@
                     var tipo = document.getElementById("tipo")
                     var tipo2 = document.getElementById("tipo2")
                     var num = document.getElementById("num")
-                    var shiny = document.getElementById("shiny")
 
 
                         var url = "https://pokeapi.co/api/v2/pokemon/" + valor 
@@ -114,7 +114,6 @@
                     num.textContent ="ID: " + dados.id
                     input.value = dados.id
                     pokemonAtual = dados.id
-                    shiny = dados.sprites.other.showdown.front_shiny
 
                 })
 
@@ -124,21 +123,41 @@
                     function Proximo() {
             pokemonAtual++
             buscarPokemon(pokemonAtual)
+            pokemonAtualShiny++
+            BuscarShiny(pokemonAtualShiny)
         }
 
         function Anterior() {
             if (pokemonAtual > 1) {
                 pokemonAtual--
                 buscarPokemon(pokemonAtual)
-            }
 
+            }
+            if (pokemonAtualShiny > 1) {
+                pokemonAtualShiny--
+                BuscarShiny(pokemonAtualShiny)
+                
+            }
         } 
         
-        function mostrarShiny() {
-            shiny = !shiny
-            buscarPokemon(pokemonAtual)
+        function ClicarShiny() {
+
+        var input = document.getElementById("pokemon")
+        var numero = isNaN(input.value) ? input.value.toLowerCase() : Number(input.value)
+         BuscarShiny(numero)   
         }
         
+        function BuscarShiny(pk) {
+    var imgShiny = document.getElementById("botao_shiny");
+    var url = "https://pokeapi.co/api/v2/pokemon/" + pk;
+    fetch(url)
+        .then(response => response.json())
+        .then((dados) => {
+            imgShiny.src = dados.sprites.other.showdown.front_shiny;
+            pokemonAtualShiny = dados.id
+
+        })
+}
     
             </script>
 </body>

@@ -11,7 +11,7 @@ body {
         flex-direction: column;
         padding: 0;
         background-color: #6eff75;
-        }
+}
 main{
         /*organizar os div*/
 }
@@ -21,16 +21,26 @@ main{
         left: 299px;
 }    
 .input_dec{
-        background: transparent;
-        border: 1px #0000009c;
-        border-bottom: 2px solid #000; /* linha abaixo */
-        color: #000000; /* cor do texto */
-        padding: 8px 4px;
-        outline:#000;
-        font-size: 16px;
-        font-family: 'Press Start 2P', monospace;
-        font-size: 9.2px;
-        text-align: center;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    font-family: 'Press Start 2P', monospace;
+    width: 193px;
+    height: 12px;
+    font-size: 8px;
+    text-align: center;
+    background-color: #2c2c2c;
+    color: #ff0000;
+}
+.input_dec:focus{
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    font-family: 'Press Start 2P', monospace;
+    width: 193px;
+    height: 12px;
+    font-size: 8px;
+    text-align: center;
+    background-color: #c7c7c7;
+    color: #ff0000;
 }
 .pos_botao{
     position: absolute;
@@ -48,21 +58,36 @@ main{
 }
 .card-botoes{
     position: absolute;
-    left: 330px;
+    left: 315px;
     top: 274px;
+    margin: 1px;
 }
 .botao_shiny, .AnteriorEdepois{
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
+    font-family: 'Press Start 2P', monospace;
+    width: 80px;
+    height: 16px;
+    font-size: 8px;
+}
+.botao_shiny{
+    transform: translate(-3px, 8px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    font-family: 'Press Start 2P', monospace;
+    width: 80px;
+    height: 16px;
+    font-size: 8px;
 }
 .botao_shiny, .AnteriorEdepois, .button:hover {
-    background-color: #ececec;
+    background-color: #ecececee;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
 }
 .botao_shiny, .AnteriorEdepois, .button:active {
     background-color: #afafaf;
     box-shadow: 0px 2px 5px rgb(0, 0, 0);
 }
+
 .pos_img{
     position: absolute;
     left: 340px;
@@ -90,16 +115,20 @@ main{
     border-radius: 8px;
     font-size: 13px;
     font-family: 'Press Start 2P', monospace;
+    display:block;
 }
 .pos_shiny{
     position: absolute;
     right: 450px;
-    top: 300px;
+    top: 250px;
 }
 .img_shiny{
-    width: 175%;
+    width: 150%;
     max-width: 240px;
+    min-width: 70px;
     height: auto;
+    min-height: auto;
+    max-height: auto;
 }
 .pos_botao-shiny{
     position: absolute;
